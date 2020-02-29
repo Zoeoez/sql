@@ -1,0 +1,25 @@
+SELECT TOP 2 * FROM Customers; 选择前两条
+
+SELECT TOP 50 PERCENT * FROM Customers;选择前50%
+
+SELECT TOP 3 * FROM Customers 加条件 选择前三
+WHERE Country='Germany'; 
+
+SELECT * FROM Customers 加条件 选择前三等价
+WHERE Country='Germany'
+LIMIT 3;
+
+limit m,n m是第几行，从0开始   n是条数
+
+
+LIKE 运算符	描述
+WHERE CustomerName LIKE 'a%'	查找以“a”开头的任何值
+WHERE CustomerName LIKE '%a'	查找以“a”结尾的任何值
+WHERE CustomerName LIKE '%or%'	在任何位置查找任何具有“or”的值
+WHERE CustomerName LIKE '_r%'	在第二个位置查找任何具有“r”的值
+WHERE CustomerName LIKE 'a_%_%'	查找以“a”开头且长度至少为3个字符的值
+WHERE ContactName LIKE 'a%o'	找到以"a"开头，以"o"结尾的值
+
+
+SELECT * FROM Customers
+WHERE Country IN (SELECT Country FROM Suppliers);
